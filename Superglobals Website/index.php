@@ -9,36 +9,42 @@
     <link rel="stylesheet" href="https://jarodpeachey.github.io/breeze_css/breeze.css">
   </head>
   <body>
-    <div class="bg-primary">
+    <div class="bg-dark">
       <div class="container p-sm">
         <div class="center-text">
-          <h2 class="m-none">Server Info</h2>
+          <h2 class="m-none">Server and Client Info</h2>
         </div>
       </div>
     </div>
     <div class="container">
-      <h2 class="mb-xs">Server Info</h2>
-      <?php if($server): ?>
-        <ul class="collection mb-lg">
-          <?php foreach($server as $key => $value): ?>
-            <li class="collection-item">
-              <strong><?php echo $key; ?>: </strong>
-              <?php echo $value; ?>
-            </li>
-          <?php endforeach; ?>
-        </ul>
-      <?php endif; ?>
-      <h2 class="mb-xs">Client Info</h2>
-      <?php if($client): ?>
-        <ul class="collection">
-          <?php foreach($client as $key => $value): ?>
-            <li class="collection-item">
-              <strong><?php echo $key; ?>: </strong>
-              <?php echo $value; ?>
-            </li>
-          <?php endforeach; ?>
-        </ul>
-      <?php endif; ?>
+      <div class="row desktop">
+        <div class="col col-6">
+          <h2 class="mb-xs">Server Info</h2>
+          <?php if($server): ?>
+            <ul class="collection mb-md tablet-mb-none">
+              <?php foreach($server as $key => $value): ?>
+                <li class="collection-item">
+                  <strong><?php echo $key; ?>: </strong>
+                  <?php echo $value; ?>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          <?php endif; ?>        
+        </div>
+        <div class="col col-6">
+          <h2 class="mb-xs">Client Info</h2>
+          <?php if($client): ?>
+            <ul class="collection">
+              <?php foreach($client as $key => $value): ?>
+                <li class="collection-item">
+                  <strong><?php echo $key; ?>: </strong>
+                  <?php echo $value; ?>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          <?php endif; ?>        
+        </div>
+      </div>
     </div>
   </body>
 </html>
