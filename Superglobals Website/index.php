@@ -1,4 +1,4 @@
-<?php include 'server_info.php' ?>
+<?php require 'server_info.php' ?> 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,29 +20,29 @@
       <div class="row desktop">
         <div class="col col-6">
           <h2 class="mb-xs">Server Info</h2>
-          <?php if($server): ?>
-            <ul class="collection mb-md tablet-mb-none">
-              <?php foreach($server as $key => $value): ?>
-                <li class="collection-item">
-                  <strong><?php echo $key; ?>: </strong>
-                  <?php echo $value; ?>
-                </li>
-              <?php endforeach; ?>
-            </ul>
-          <?php endif; ?>        
+            <?php if ($server) : ?>
+              <ul class="collection mb-md tablet-mb-none">
+                <?php foreach($server as $key => $value): ?>
+                  <li class="collection-item">
+                    <strong><?php echo $key; ?>: </strong>
+                    <?php echo $value; ?>
+                  </li>
+                <?php endforeach; ?>
+              </ul>
+            <?php endif; ?>        
         </div>
         <div class="col col-6">
           <h2 class="mb-xs">Client Info</h2>
-          <?php if($client): ?>
-            <ul class="collection">
-              <?php foreach($client as $key => $value): ?>
-                <li class="collection-item">
-                  <strong><?php echo $key; ?>: </strong>
-                  <?php echo $value; ?>
-                </li>
-              <?php endforeach; ?>
-            </ul>
-          <?php endif; ?>        
+            <?php if ($client) : ?>
+              <ul class="collection">
+                <?php foreach($client as $key => $value): ?>
+                  <li class="collection-item">
+                    <strong><?php echo $key; ?>:  </strong>
+                    <?php echo $value; ?>
+                  </li>
+                <?php endforeach; ?>
+              </ul>
+            <?php endif; ?>        
         </div>
       </div>
     </div>
