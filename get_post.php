@@ -1,12 +1,10 @@
 <?php 
-  $name = '';
-  $email = '';
   if (isset($_GET['name'])) {
-    $name = $_GET['name'];
+    $name = htmlentities($_GET['name']);
   }
 
   if (isset($_GET['email'])) {
-    $email = $_GET['email'];
+    $email = htmlentities($_GET['email']);
   }
 ?>
 
@@ -25,27 +23,27 @@
         <form method="GET" action="get_post.php">
           <div class="input-element full-width">
             <label>Name</label>
-            <input class="full-width" type="text" name="name" placeholder="Enter name...">
+            <input class="full-width" type="text" name="name" value=<?php if($name) {echo $name;}; ?> placeholder="Enter name...">
           </div>
           <div class="input-element full-width">
             <label>Email</label>
-            <input class="full-width" type="email" name="email" placeholder="Enter email...">
+            <input class="full-width" type="email" name="email" value=<?php if($email) {echo $email;}; ?> placeholder="Enter email...">
           </div>
           <div class="input-element m-none">
             <input class="button primary" type="submit" value="Submit Form">
           </div>
         </form>      
       </div>
-      <?php if($name != '' || $email != ''): ?>
+      <?php if($name || $email): ?>
         <div class="card no-shadow border bg-light px-md py-sm m-auto" style="max-width: 576px">
           <h3 class="title">Info</h3>
           <ul class="collection bg-white">
-            <?php if($name != ''): ?>
+            <?php if($name): ?>
               <div class="collection-item">
                 <strong>Name:</strong> <?php echo $name ?>
               </div>
             <?php endif; ?>
-            <?php if($email != ''): ?>
+            <?php if($email): ?>
               <div class="collection-item">
                 <strong>Email:</strong> <?php echo $email ?>
               </div>
