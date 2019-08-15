@@ -6,7 +6,18 @@
   if (isset($_GET['email'])) {
     $email = htmlentities($_GET['email']);
   }
+
+  if (isset($_POST['name'])) {
+    $name = htmlentities($_POST['name']);
+  }
+
+  if (isset($_POST['email'])) {
+    $email = htmlentities($_POST['email']);
+  }
 ?>
+
+<!-- GET sends through URL -->
+<!-- POST sends through headers and is not visible -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,14 +31,14 @@
   <body>
     <div class="container">
       <div class="card no-shadow border bg-light px-md py-sm m-auto mb-md" style="max-width: 576px">
-        <form method="GET" action="get_post.php">
+        <form method="POST" action="get_post.php">
           <div class="input-element full-width">
             <label>Name</label>
-            <input class="full-width" type="text" name="name" value=<?php if($name) {echo $name;}; ?> placeholder="Enter name...">
+            <input class="full-width" type="text" name="name" placeholder="Enter name..." value=<?php if($name) {echo $name;}; ?>>
           </div>
           <div class="input-element full-width">
             <label>Email</label>
-            <input class="full-width" type="email" name="email" value=<?php if($email) {echo $email;}; ?> placeholder="Enter email...">
+            <input class="full-width" type="email" name="email" placeholder="Enter email..." value=<?php if($email) {echo $email;}; ?>>
           </div>
           <div class="input-element m-none">
             <input class="button primary" type="submit" value="Submit Form">
