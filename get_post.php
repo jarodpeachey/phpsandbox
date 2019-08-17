@@ -1,11 +1,11 @@
 <?php 
-  if (isset($_GET['name'])) {
-    $name = htmlentities($_GET['name']);
-  }
+  // if (isset($_GET['name'])) {
+  //   $name = htmlentities($_GET['name']);
+  // }
 
-  if (isset($_GET['email'])) {
-    $email = htmlentities($_GET['email']);
-  }
+  // if (isset($_GET['email'])) {
+  //   $email = htmlentities($_GET['email']);
+  // }
 
   if (isset($_POST['name'])) {
     $name = htmlentities($_POST['name']);
@@ -14,6 +14,14 @@
   if (isset($_POST['email'])) {
     $email = htmlentities($_POST['email']);
   }
+
+  // if (isset($_REQUEST['name'])) {
+  //   $name = htmlentities($_REQUEST['name']);
+  // }
+
+  // if (isset($_REQUEST['email'])) {
+  //   $email = htmlentities($_REQUEST['email']);
+  // }
 ?>
 
 <!-- GET sends through URL -->
